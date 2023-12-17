@@ -30,13 +30,21 @@ class _MovingButtonState extends State<MovingButton> {
 
   double x = 0;
   double y = 0;
-  int yMax = 690;
-  int xMax = 336;
+  late double xMax;
+  late double yMax;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final size = MediaQuery.of(context).size;
+    xMax = size.width - 14; // 14 pixels away from right
+    yMax = size.height - MediaQuery.of(context).padding.top - 40; // 40 pixels away from bottom, considering top padding (status bar)
+  }
 
   void changePosition() {
     setState(() {
-      x = random.nextInt(xMax + 1).toDouble();
-      y = random.nextInt(yMax + 1).toDouble();
+      x = random.nextDouble() * xMax;
+      y = random.nextDouble() * yMax;
       count++;
     });
   }
@@ -59,13 +67,12 @@ class _MovingButtonState extends State<MovingButton> {
             left: x,
             top: y,
             child: IconButton(
-              onPressed: () {
-                changePosition();
-              },
-              icon: const Icon(Icons.add_box),
-              iconSize: 60.0,
-              highlightColor: Colors.transparent
-            ),
+                onPressed: () {
+                  changePosition();
+                },
+                icon: const Icon(Icons.add_box),
+                iconSize: 60.0,
+                highlightColor: Colors.transparent),
           ),
           Align(
             alignment: Alignment.bottomCenter,
