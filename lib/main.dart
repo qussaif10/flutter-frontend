@@ -50,9 +50,26 @@ class _LoginFormState extends State<LoginForm> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: "Username",
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        hintText: "Username",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        hintText: "Password",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                      ),
                     ),
                   )
                 ],
