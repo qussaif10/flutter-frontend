@@ -29,6 +29,7 @@ class _LoginFormState extends State<LoginForm> {
     return Scaffold(
       body: Center(
         child: Container(
+          width: 350,
           padding: const EdgeInsets.all(2),
           decoration: BoxDecoration(
             border: Border.all(
@@ -71,7 +72,7 @@ class _LoginFormState extends State<LoginForm> {
                         ),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -81,6 +82,7 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 }
+
 
 class SingUpForm extends StatefulWidget {
   const SingUpForm({super.key});
