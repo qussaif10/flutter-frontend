@@ -73,6 +73,16 @@ class _LoginFormState extends State<LoginForm> {
                       ),
                     ),
                   ),
+                  ElevatedButton(
+                    onPressed: () {
+                      // Handle login logic
+                    },
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.blue, // Text color
+                    ),
+                    child: const Text('Login'),
+                  )
                 ],
               ),
             ),
@@ -82,7 +92,6 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 }
-
 
 class SingUpForm extends StatefulWidget {
   const SingUpForm({super.key});
